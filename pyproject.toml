@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "music-genre-classifier"
+version = "0.1.0"
+description = ""
+authors = ["francobach47 <francobach47@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+numpy = "^1.22"
+librosa = "0.10.0"
+torch = "2.0.0"
+torchsummary = "^1.5.1"
+scikit-learn = "1.0.2"
+natsort = "8.3.1"
+tqdm = "^4.66.4"
+flask = "^3.0.3"
+
+[tool.poetry.dev-dependencies]
+mlflow = "^2.14.3"
+pre-commit = "^3.6.2"
+black = "^24.2.0"
+pylint = "^3.1.0"
+pytest = "^8.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
