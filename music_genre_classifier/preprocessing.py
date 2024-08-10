@@ -193,7 +193,11 @@ def normalization(tensor: list) -> list:
         Data normalized. Mel spectrograms normalized.
     """
 
-    tensor_norm = tensor - np.mean(tensor, axis=0) / np.std(tensor, axis=0)
+    tensor = np.array(tensor)
+    tensor_mean = np.mean(tensor, axis=0)
+    tensor_std = np.std(tensor, axis=0)
+    tensor_std[tensor_std == 0] = 1e-8
+    tensor_norm = (tensor - tensor_mean) / tensor_std
     tensor_norm = tensor_norm / np.max(np.abs(tensor_norm))
 
     return tensor_norm
